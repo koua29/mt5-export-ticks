@@ -1,0 +1,9 @@
+# MetaTrader / MQL5 artefacts compilés
+*.ex5
+*.ex4
+
+# Données exportées (peuvent être volumineuses)
+*.csv
+
+# macOS
+.DS_Store
