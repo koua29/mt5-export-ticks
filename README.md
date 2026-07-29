@@ -73,4 +73,4 @@ Le fichier est écrit dans `MQL5/Files/` du dossier de données du terminal
 
 ## Licence
 
-[MIT](LICENSE) — Arnaud Soulas.
+[MIT](LICENSE) — koua29.
