@@ -76,3 +76,28 @@ Le fichier est écrit dans `MQL5/Files/` du dossier de données du terminal
 ## Licence
 
 [MIT](LICENSE) — koua29.
+
+---
+
+## 📚 À lire
+
+*Liens partenaires Amazon : si vous achetez via ces liens, le projet touche une petite commission, sans surcoût pour vous.*
+
+<table>
+<tr>
+<td align="center" width="33%">
+  <a href="https://www.amazon.fr/dp/1394159161?linkCode=ll2&amp;tag=koua29mt5-21&amp;ref_=as_li_ss_tl"><img src="assets/amazon-1394159161.jpg" width="200" alt="GitHub For Dummies (en anglais)"></a><br>
+  <b><a href="https://www.amazon.fr/dp/1394159161?linkCode=ll2&amp;tag=koua29mt5-21&amp;ref_=as_li_ss_tl">GitHub For Dummies (en anglais)</a></b><br><sub>Le contrôle de version et les pull requests, pas à pas</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.amazon.fr/dp/0135957052?linkCode=ll2&amp;tag=koua29mt5-21&amp;ref_=as_li_ss_tl"><img src="assets/amazon-0135957052.jpg" width="200" alt="The Pragmatic Programmer (en anglais)"></a><br>
+  <b><a href="https://www.amazon.fr/dp/0135957052?linkCode=ll2&amp;tag=koua29mt5-21&amp;ref_=as_li_ss_tl">The Pragmatic Programmer (en anglais)</a></b><br><sub>Le classique du métier, 20 ans après</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.amazon.fr/dp/B0F6S5425Y?linkCode=ll2&amp;tag=koua29mt5-21&amp;ref_=as_li_ss_tl"><img src="assets/amazon-B0F6S5425Y.jpg" width="200" alt="Beyond Vibe Coding (en anglais)"></a><br>
+  <b><a href="https://www.amazon.fr/dp/B0F6S5425Y?linkCode=ll2&amp;tag=koua29mt5-21&amp;ref_=as_li_ss_tl">Beyond Vibe Coding (en anglais)</a></b><br><sub>Du codeur au développeur de l'ère IA</sub>
+</td>
+</tr>
+</table>
+
+<sub>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</sub>
