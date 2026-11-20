@@ -76,3 +76,28 @@ The file is written to `MQL5/Files/` in the terminal's data folder
 ## License
 
 [MIT](LICENSE) — koua29.
+
+---
+
+## 📚 Recommended reading
+
+*Amazon affiliate links: if you buy through these links, the project earns a small commission at no extra cost to you.*
+
+<table>
+<tr>
+<td align="center" width="33%">
+  <a href="https://www.amazon.com/dp/1394159161?linkCode=ll2&amp;tag=koua29mt5-20&amp;ref_=as_li_ss_tl"><img src="assets/amazon-1394159161.jpg" width="200" alt="GitHub For Dummies"></a><br>
+  <b><a href="https://www.amazon.com/dp/1394159161?linkCode=ll2&amp;tag=koua29mt5-20&amp;ref_=as_li_ss_tl">GitHub For Dummies</a></b><br><sub>Version control and pull requests, step by step</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.amazon.com/dp/0135957052?linkCode=ll2&amp;tag=koua29mt5-20&amp;ref_=as_li_ss_tl"><img src="assets/amazon-0135957052.jpg" width="200" alt="The Pragmatic Programmer"></a><br>
+  <b><a href="https://www.amazon.com/dp/0135957052?linkCode=ll2&amp;tag=koua29mt5-20&amp;ref_=as_li_ss_tl">The Pragmatic Programmer</a></b><br><sub>The craft's classic, 20 years on</sub>
+</td>
+<td align="center" width="33%">
+  <a href="https://www.amazon.com/dp/B0F6S5425Y?linkCode=ll2&amp;tag=koua29mt5-20&amp;ref_=as_li_ss_tl"><img src="assets/amazon-B0F6S5425Y.jpg" width="200" alt="Beyond Vibe Coding"></a><br>
+  <b><a href="https://www.amazon.com/dp/B0F6S5425Y?linkCode=ll2&amp;tag=koua29mt5-20&amp;ref_=as_li_ss_tl">Beyond Vibe Coding</a></b><br><sub>From coder to AI-era developer</sub>
+</td>
+</tr>
+</table>
+
+<sub>As an Amazon Associate I earn from qualifying purchases.</sub>
