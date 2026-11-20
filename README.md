@@ -1,24 +1,26 @@
-# ExportTicks — Export complet des ticks MetaTrader 5 vers CSV
+# ExportTicks — Full MetaTrader 5 tick export to CSV
 
-Script **MQL5** pour MetaTrader 5 qui exporte **l'intégralité des ticks** d'un symbole
-sur une période donnée dans un fichier CSV, pour analyse hors-ligne (Python, Excel, etc.).
+<p align="center">🇺🇸 <b>English</b> · 🇫🇷 <a href="README.fr.md">Français</a></p>
 
-Il **contourne la limite de 131 072 ticks** du visualiseur intégré de MT5 en utilisant
-`CopyTicksRange()` **jour par jour**, ce qui le rend robuste en mémoire et sans plafond :
-des millions de ticks peuvent être exportés en un seul passage.
+An **MQL5** script for MetaTrader 5 that exports **every single tick** of a symbol
+over a given period to a CSV file, for offline analysis (Python, Excel, etc.).
 
-![Paramètres d'entrée du script](docs/inputs.png)
+It **gets around the 131,072-tick limit** of MT5's built-in viewer by calling
+`CopyTicksRange()` **one day at a time**, which keeps memory use low and removes any cap:
+millions of ticks can be exported in a single run.
 
-## Pourquoi ce script ?
+![Script input parameters](docs/inputs.png)
 
-Le visualiseur de ticks de MT5 plafonne l'affichage et l'export à 131 072 ticks, ce qui
-est insuffisant pour analyser plusieurs jours de données haute fréquence (le GOLD génère
-facilement > 150 000 ticks par jour). En découpant la requête par tranches de 24 h et en
-écrivant au fil de l'eau, `ExportTicks` lève cette contrainte.
+## Why this script?
 
-## Format de sortie
+MT5's tick viewer caps display and export at 131,072 ticks, which is not enough
+to analyse several days of high-frequency data (GOLD easily produces
+> 150,000 ticks a day). By splitting the request into 24-hour slices and
+writing as it goes, `ExportTicks` lifts that limit.
 
-Fichier texte tabulé (`\t`), une ligne d'en-tête puis une ligne par tick :
+## Output format
+
+Tab-separated text file (`\t`), one header line then one line per tick:
 
 ```
 <DATE>	<TIME>	<BID>	<ASK>
@@ -26,51 +28,51 @@ Fichier texte tabulé (`\t`), une ligne d'en-tête puis une ligne par tick :
 ...
 ```
 
-- `<DATE>` : `AAAA.MM.JJ`
-- `<TIME>` : `HH:MM:SS.mmm` (millisecondes incluses)
-- `<BID>` / `<ASK>` : cours arrondis au nombre de décimales du symbole (`_Digits`)
+- `<DATE>`: `YYYY.MM.DD`
+- `<TIME>`: `HH:MM:SS.mmm` (milliseconds included)
+- `<BID>` / `<ASK>`: prices rounded to the symbol's number of decimals (`_Digits`)
 
-Ce format est directement exploitable par des scripts d'analyse (à l'origine compatible
-avec un `replay_ai_decisions.py`).
+This format can be used directly by analysis scripts (originally compatible
+with a `replay_ai_decisions.py`).
 
 ## Installation
 
-1. Copier `ExportTicks.mq5` dans le dossier `MQL5/Scripts` de ton terminal MT5
-   (*Fichier → Ouvrir le dossier de données*).
-2. Dans MetaEditor, ouvrir le fichier et compiler avec **F7**.
-3. Le script apparaît dans le **Navigateur → Scripts** de MT5.
+1. Copy `ExportTicks.mq5` into the `MQL5/Scripts` folder of your MT5 terminal
+   (*File → Open Data Folder*).
+2. In MetaEditor, open the file and compile it with **F7**.
+3. The script shows up in MT5's **Navigator → Scripts**.
 
-## Utilisation
+## Usage
 
-1. Ouvrir un graphique du symbole voulu (ex. `GOLD`, n'importe quelle période — H1 suffit).
-2. Glisser-déposer le script sur le graphique.
-3. Renseigner les paramètres d'entrée :
+1. Open a chart of the symbol you want (e.g. `GOLD`, any timeframe — H1 is fine).
+2. Drag and drop the script onto the chart.
+3. Fill in the input parameters:
 
-| Paramètre | Description | Exemple |
+| Parameter | Description | Example |
 | --- | --- | --- |
-| `InpFrom` | Date/heure de début (**inclus**) | `2026.06.07 00:00:00` |
-| `InpTo` | Date/heure de fin (**exclus**) | `2026.06.19 00:00:00` |
-| `InpFileName` | Nom du fichier CSV de sortie | `GOLD_ticks_full.csv` |
+| `InpFrom` | Start date/time (**inclusive**) | `2026.06.07 00:00:00` |
+| `InpTo` | End date/time (**exclusive**) | `2026.06.19 00:00:00` |
+| `InpFileName` | Output CSV file name | `GOLD_ticks_full.csv` |
 
-4. Valider. La progression s'affiche dans l'onglet **Experts / Journal** :
+4. Confirm. Progress is shown in the **Experts / Journal** tab:
 
-![Journal d'exécution](docs/journal.png)
+![Run log](docs/journal.png)
 
-Le fichier est écrit dans `MQL5/Files/` du dossier de données du terminal
-(*Fichier → Ouvrir le dossier de données → MQL5 → Files*).
+The file is written to `MQL5/Files/` in the terminal's data folder
+(*File → Open Data Folder → MQL5 → Files*).
 
-> 💡 Les ticks ne sont disponibles que si MT5 les a téléchargés au préalable.
-> Pour une période ancienne, ouvre d'abord le symbole et laisse l'historique des
-> ticks se charger (clic sur le graphique + défilement), sinon certaines journées
-> reviendront vides.
+> 💡 Ticks are only available if MT5 has downloaded them beforehand.
+> For an older period, open the symbol first and let the tick history
+> load (click the chart + scroll back), otherwise some days
+> will come back empty.
 
-## Notes techniques
+## Technical notes
 
-- Découpage **jour par jour** (`86400 s`) : empêche les pics mémoire et supprime tout
-  plafond sur le volume total.
-- `CopyTicksRange(_Symbol, ..., COPY_TICKS_ALL, from_msc, to_msc)` borné à la milliseconde.
-- Écriture en `FILE_TXT | FILE_ANSI` avec fins de ligne `\r\n` (compatible Windows/Excel).
+- **Day-by-day** slicing (`86400 s`): avoids memory spikes and removes any
+  cap on the total volume.
+- `CopyTicksRange(_Symbol, ..., COPY_TICKS_ALL, from_msc, to_msc)` bounded to the millisecond.
+- Written as `FILE_TXT | FILE_ANSI` with `\r\n` line endings (Windows/Excel friendly).
 
-## Licence
+## License
 
 [MIT](LICENSE) — koua29.
